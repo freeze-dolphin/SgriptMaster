@@ -51,6 +51,7 @@
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
 			<version>3.0.7</version>
+			<type>pom</type>
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
@@ -58,7 +59,7 @@
 			<artifactId>CS-CoreLib</artifactId>
 			<version>1.5.18</version>
 			<scope>system</scope>
-			<systemPath>${pom.basedir}/lib/CS-CoreLib-1.5.18.jar</systemPath>
+			<systemPath>${basedir}/lib/CS-CoreLib-1.5.18.jar</systemPath>
 		</dependency>
 	</dependencies>
 
