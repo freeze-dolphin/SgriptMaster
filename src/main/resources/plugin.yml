@@ -1,4 +1,4 @@
 name: SgriptMaster
-main: github.freeze_dolphin.sgript_master.SgriptMaster
+main: io.freeze_dolphin.sgript_master.SgriptMaster
 version: ${project.version}
 author: Freeze_Dolphin

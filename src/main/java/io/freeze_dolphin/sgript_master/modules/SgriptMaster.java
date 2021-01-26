@@ -1,4 +1,4 @@
-package github.freeze_dolphin.sgript_master;
+package io.freeze_dolphin.sgript_master.modules;
 
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
