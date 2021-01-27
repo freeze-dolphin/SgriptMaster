@@ -1,19 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>github.freeze-dolphin</groupId>
+	<groupId>io.freeze-dolphin</groupId>
 	<artifactId>sgript-master</artifactId>
 	<version>1.0.0</version>
 
 	<name>SgriptMaster</name>
+	<description>A script manager for minecraft server</description>
 	<url>https://github.com/freeze-dolphin/SgriptMaster</url>
 
 	<properties>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+		<spigot.native-version>11200</spigot.native-version>
+		<spigot.main>${project.groupId}.${project.artifactId}.boot.PluginBoot</spigot.main>
+		<spigot.api-version>1.13</spigot.api-version>
+		<spigot.load />
+		<spigot.prefix />
+		<spigot.author>Freeze_Dolphin</spigot.author>
+		<spigot.license>AGPL-3.0</spigot.license>
+
+		<taboolib.lib-version>5.5</taboolib.lib-version>
+		<taboolib.loader-version>2.9</taboolib.loader-version>
+		<taboolib.lib-download>true</taboolib.lib-download>
 	</properties>
 
 	<pluginRepositories>
@@ -42,24 +56,31 @@
 	<dependencies>
 		<dependency>
 			<groupId>ink.ptms.core</groupId>
-			<artifactId>v11200</artifactId>
-			<version>11200</version>
+			<artifactId>v${spigot.native-version}</artifactId>
+			<version>${spigot.native-version}</version>
 			<scope>provided</scope>
+			<classifier>all</classifier>
+		</dependency>
+		<dependency>
+			<groupId>io.izzel.taboolib</groupId>
+			<artifactId>TabooLib</artifactId>
+			<version>${taboolib.lib-version}</version>
+			<scope>provided</scope>
+			<classifier>all</classifier>
+		</dependency>
+		<dependency>
+			<groupId>io.izzel.taboolib</groupId>
+			<artifactId>TabooLibLoader</artifactId>
+			<version>${taboolib.loader-version}</version>
+			<scope>compile</scope>
 			<classifier>all</classifier>
 		</dependency>
 		<dependency>
 			<groupId>org.codehaus.groovy</groupId>
 			<artifactId>groovy-all</artifactId>
 			<version>3.0.7</version>
-			<type>pom</type>
 			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>me.mrCookieSlime</groupId>
-			<artifactId>CS-CoreLib</artifactId>
-			<version>1.5.18</version>
-			<scope>system</scope>
-			<systemPath>${basedir}/lib/CS-CoreLib-1.5.18.jar</systemPath>
+			<type>pom</type>
 		</dependency>
 	</dependencies>
 
@@ -80,6 +101,34 @@
 					<escapeString>\</escapeString>
 					<encoding>UTF-8</encoding>
 				</configuration>
+			</plugin>
+			<plugin>
+				<artifactId>maven-shade-plugin</artifactId>
+				<version>3.2.4</version>
+				<configuration>
+					<relocations>
+						<relocation>
+							<pattern>io.izzel.taboolib.loader</pattern>
+							<shadedPattern>${project.groupId}.${project.artifactId}.boot</shadedPattern>
+						</relocation>
+					</relocations>
+					<filters>
+						<filter>
+							<artifact>*:*</artifact>
+							<excludes>
+								<exclude>META-INF/**</exclude>
+							</excludes>
+						</filter>
+					</filters>
+				</configuration>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>shade</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
