@@ -1,4 +1,0 @@
-name: SgriptMaster
-main: io.freeze_dolphin.sgript_master.SgriptMaster
-version: ${project.version}
-author: Freeze_Dolphin
