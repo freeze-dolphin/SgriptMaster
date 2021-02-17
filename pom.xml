@@ -1,135 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-	<modelVersion>4.0.0</modelVersion>
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.freeze-dolphin</groupId>
-	<artifactId>sgript-master</artifactId>
-	<version>1.0.0</version>
+    <groupId>io.freeze-dolphin</groupId>
+    <artifactId>sgript-master</artifactId>
+    <version>1.0.0</version>
 
-	<name>SgriptMaster</name>
-	<description>A script manager for minecraft server</description>
-	<url>https://github.com/freeze-dolphin/SgriptMaster</url>
+    <name>SgriptMaster</name>
+    <description>A script manager for minecraft server</description>
+    <url>https://github.com/freeze-dolphin/SgriptMaster</url>
 
-	<properties>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <properties>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<spigot.native-version>11200</spigot.native-version>
-		<spigot.main>${project.groupId}.${project.artifactId}.boot.PluginBoot</spigot.main>
-		<spigot.api-version>1.13</spigot.api-version>
-		<spigot.load />
-		<spigot.prefix />
-		<spigot.author>Freeze_Dolphin</spigot.author>
-		<spigot.license>AGPL-3.0</spigot.license>
+        <spigot.native-version>11200</spigot.native-version>
+        <spigot.main>${project.groupId}.${project.artifactId}.boot.PluginBoot</spigot.main>
+        <spigot.api-version>1.13</spigot.api-version>
+        <spigot.load />
+        <spigot.prefix />
+        <spigot.author>Freeze_Dolphin</spigot.author>
+        <spigot.license>AGPL-3.0</spigot.license>
 
-		<taboolib.lib-version>5.5</taboolib.lib-version>
-		<taboolib.loader-version>2.9</taboolib.loader-version>
-		<taboolib.lib-download>true</taboolib.lib-download>
-	</properties>
+        <taboolib.lib-version>5.55</taboolib.lib-version>
+        <taboolib.loader-version>2.12</taboolib.loader-version>
+        <taboolib.lib-download>true</taboolib.lib-download>
+    </properties>
 
-	<pluginRepositories>
-		<pluginRepository>
-			<id>nexus-aliyun</id>
-			<url>https://maven.aliyun.com/repository/public</url>
-		</pluginRepository>
-	</pluginRepositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>nexus-aliyun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </pluginRepository>
+    </pluginRepositories>
 
-	<repositories>
-		<repository>
-			<id>nexus-aliyun</id>
-			<url>https://maven.aliyun.com/repository/public</url>
-		</repository>
-		<repository>
-			<id>taboolib</id>
-			<url>http://ptms.ink:8081/repository/maven-public/</url>
-		</repository>
-		<repository>
-			<id>lss233-minecraft</id>
-			<name>Lss233's Minecraft Repository</name>
-			<url>http://lss233.littleservice.cn/repositories/minecraft/</url>
-		</repository>
-	</repositories>
+    <repositories>
+        <repository>
+            <id>nexus-aliyun</id>
+            <url>https://maven.aliyun.com/repository/public</url>
+        </repository>
+        <repository>
+            <id>taboolib</id>
+            <url>http://ptms.ink:8081/repository/maven-public/</url>
+        </repository>
+        <repository>
+            <id>lss233-minecraft</id>
+            <name>Lss233's Minecraft Repository</name>
+            <url>http://lss233.littleservice.cn/repositories/minecraft/</url>
+        </repository>
+    </repositories>
 
-	<dependencies>
-		<dependency>
-			<groupId>ink.ptms.core</groupId>
-			<artifactId>v${spigot.native-version}</artifactId>
-			<version>${spigot.native-version}</version>
-			<scope>provided</scope>
-			<classifier>all</classifier>
-		</dependency>
-		<dependency>
-			<groupId>io.izzel.taboolib</groupId>
-			<artifactId>TabooLib</artifactId>
-			<version>${taboolib.lib-version}</version>
-			<scope>provided</scope>
-			<classifier>all</classifier>
-		</dependency>
-		<dependency>
-			<groupId>io.izzel.taboolib</groupId>
-			<artifactId>TabooLibLoader</artifactId>
-			<version>${taboolib.loader-version}</version>
-			<scope>compile</scope>
-			<classifier>all</classifier>
-		</dependency>
-		<dependency>
-			<groupId>org.codehaus.groovy</groupId>
-			<artifactId>groovy-all</artifactId>
-			<version>3.0.7</version>
-			<scope>provided</scope>
-			<type>pom</type>
-		</dependency>
-	</dependencies>
+    <dependencies>
+        <dependency>
+            <groupId>ink.ptms.core</groupId>
+            <artifactId>v${spigot.native-version}</artifactId>
+            <version>${spigot.native-version}</version>
+            <scope>provided</scope>
+            <classifier>all</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.izzel.taboolib</groupId>
+            <artifactId>TabooLib</artifactId>
+            <version>${taboolib.lib-version}</version>
+            <scope>provided</scope>
+            <classifier>all</classifier>
+        </dependency>
+        <dependency>
+            <groupId>io.izzel.taboolib</groupId>
+            <artifactId>TabooLibLoader</artifactId>
+            <version>${taboolib.loader-version}</version>
+            <scope>compile</scope>
+            <classifier>all</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
+            <version>3.0.7</version>
+            <scope>provided</scope>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
 
-	<build>
-		<finalName>${project.name} v${project.version}</finalName>
-		<resources>
-			<resource>
-				<directory>${project.basedir}/src/main/resources</directory>
-				<filtering>true</filtering>
-			</resource>
-		</resources>
+    <build>
+        <finalName>${project.name} v${project.version}</finalName>
+        <resources>
+            <resource>
+                <directory>${project.basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+            </resource>
+        </resources>
 
-		<plugins>
-			<plugin>
-				<artifactId>maven-resources-plugin</artifactId>
-				<version>3.2.0</version>
-				<configuration>
-					<escapeString>\</escapeString>
-					<encoding>UTF-8</encoding>
-				</configuration>
-			</plugin>
-			<plugin>
-				<artifactId>maven-shade-plugin</artifactId>
-				<version>3.2.4</version>
-				<configuration>
-					<relocations>
-						<relocation>
-							<pattern>io.izzel.taboolib.loader</pattern>
-							<shadedPattern>${project.groupId}.${project.artifactId}.boot</shadedPattern>
-						</relocation>
-					</relocations>
-					<filters>
-						<filter>
-							<artifact>*:*</artifact>
-							<excludes>
-								<exclude>META-INF/**</exclude>
-							</excludes>
-						</filter>
-					</filters>
-				</configuration>
-				<executions>
-					<execution>
-						<phase>package</phase>
-						<goals>
-							<goal>shade</goal>
-						</goals>
-					</execution>
-				</executions>
-			</plugin>
-		</plugins>
-	</build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.2.0</version>
+                <configuration>
+                    <escapeString>\</escapeString>
+                    <encoding>UTF-8</encoding>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.2.4</version>
+                <configuration>
+                    <relocations>
+                        <relocation>
+                            <pattern>io.izzel.taboolib.loader</pattern>
+                            <shadedPattern>${project.groupId}.${project.artifactId}.boot</shadedPattern>
+                        </relocation>
+                    </relocations>
+                    <filters>
+                        <filter>
+                            <artifact>*:*</artifact>
+                            <excludes>
+                                <exclude>META-INF/**</exclude>
+                            </excludes>
+                        </filter>
+                    </filters>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
 </project>
