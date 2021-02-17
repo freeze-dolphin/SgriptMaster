@@ -30,26 +30,10 @@
         <taboolib.lib-download>true</taboolib.lib-download>
     </properties>
 
-    <pluginRepositories>
-        <pluginRepository>
-            <id>nexus-aliyun</id>
-            <url>https://maven.aliyun.com/repository/public</url>
-        </pluginRepository>
-    </pluginRepositories>
-
     <repositories>
-        <repository>
-            <id>nexus-aliyun</id>
-            <url>https://maven.aliyun.com/repository/public</url>
-        </repository>
         <repository>
             <id>taboolib</id>
             <url>http://ptms.ink:8081/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>lss233-minecraft</id>
-            <name>Lss233's Minecraft Repository</name>
-            <url>http://lss233.littleservice.cn/repositories/minecraft/</url>
         </repository>
     </repositories>
 
